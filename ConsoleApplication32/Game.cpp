@@ -13,9 +13,17 @@ Game::Game() {
     field.placePrize(prizeX, prizeY);
 }
 
+Game::Game(Game&& other) noexcept
+    :field(std::move(other.field)){}
+
+Game createGame() {
+    Game game;
+    return std::move(game);
+}
+
 void Game::run() {
     while (true) {
-        system("clear");
+        system("cls");
         field.drawField();
         std::cout << "WASD to move, Q to quit: ";
         char action;

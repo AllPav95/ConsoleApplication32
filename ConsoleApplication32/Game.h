@@ -6,6 +6,7 @@ public:
     Field field;
 
     Game();
+    Game(Game&& other) noexcept;
 
     void run();
 };

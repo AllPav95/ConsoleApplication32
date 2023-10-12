@@ -22,11 +22,11 @@ void Field::drawField() const
 {
     for (int i = 0; i < fieldHeight; ++i) {
         for (int j = 0; j < fieldWidth; ++j) {
-            char symbol = (star.x == j && star.y == i) ? '*' : '+';
+            char symbol = (star.x == j && star.y == i) ? '*' : '-';
             if (prize.x == j && prize.y == i) {
                 symbol = 'P';
             }
-            std::cout << symbol << '+';
+            std::cout << symbol << '-';
         }
         std::cout << std::endl;
     }
